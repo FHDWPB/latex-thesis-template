@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Parameter - Hier auf die eigene Arbeit anpassen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\dokumententyp}{Bachelor-Thesis}
+\newcommand{\abgabedatum}{\today} 
+\newcommand{\ort}{Paderborn} 
+\newcommand{\koorperationsunternehmen}{Unternehmen GmbH}
+\newcommand{\dokumententitel}{Konzeption und prototypische Realisierung einer \dokumententyp{} mit {\LaTeX}}
+\newcommand{\dokumentenautor}{Max Mustermann}
+\newcommand{\dokumentenautoradress}{Musterweg 123\\33102 Paderborn}
+\newcommand{\dokumentenpruefer}{Prof. Dr. Weis-Alles\\Prof. Dr. Besser}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{config/Config}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Titelseite
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapter/Titelseite}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Draft-Einstellungen
+%%
+%% Für die finale Version auskommentieren!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancyhead[L]{\color{red} Stand: \today~-~\currenttime}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verzeichnisse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Römische Seitennummerierung
+\pagenumbering{Roman}
+
+% Sperrvermerk
+\include{chapter/Sperrvermerk}
+
+% Inhaltsverzeichnis
+\tableofcontents\newpage
+
+% Abkürzungsverzeichnis
+\printglossary[type=\acronymtype, style=mylist, title=Abkürzungsverzeichnis, toctitle=Abkürzungsverzeichnis]\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inhalt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Arabische Seitennummerierung
+\pagenumbering{arabic} 
+
+\include{chapter/Einleitung}
+
+\include{chapter/Installation}
+
+\include{chapter/Grundlagen}
+
+\include{chapter/Zusammenfassung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapter/Anhang}
+
+\include{chapter/Quellenverzeichnis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abbildungsverzeichnis
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures\newpage
+
+% Tabellenverzeichnis
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables\newpage
+
+% Quelltextverzeichnis
+\lstlistoflistings\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapter/Ehrenwoertliche_Erklaerung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

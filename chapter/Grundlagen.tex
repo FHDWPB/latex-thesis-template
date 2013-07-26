@@ -1,0 +1,166 @@
+%!TEX root = ../Thesis.tex
+\section{Grundlagen}
+
+\subsection{Schrift}
+\label{sec:schrift}
+
+\subsubsection{Schriftgrößen}
+\label{sec:schriftgroessen}
+\tiny Das ist sehr kleine Schrift\\
+\small Das ist kleine Schrift\\
+\normalsize Das ist normale Schrift\\
+\large Das ist große Schrift\\
+\Large Das ist größere Schrift\\
+\LARGE Das ist noch größere Schrift\\
+\huge Das ist riesige Schrift\\
+\Huge Das ist noch riesigere Schrift\\
+\scriptsize Das ist Script Schrift\\
+\footnotesize Das ist Fußnoten Schrift
+\normalsize
+
+\subsubsection{Schrift Typen}
+\label{sec:Schrift Typen}
+\textbf{Das ist ein fetter Text}\\
+\textit{Das ist ein kursiver Text}\\
+\underline{Das ist ein unterstrichener Text}\\
+\textsc{Das ist ein kapitälchen Text}\\
+\textsf{Das ist ein serifenloser Text}\\
+\texttt{Das ist ein Schreibmaschinen Text}\\
+\textnormal{Das ist ein normaler Text}
+
+\subsubsection{Schrift Ausrichtung}
+\label{sec:Schrift Ausrichtung}
+\begin{quote}
+Quote Text (Der gesamte Text innerhalb der Umgebung wird von beiden Seiten eingerückt)
+\end{quote}
+\begin{center}
+Zentrierter Text (Der gesamte Text innerhalb der Umgebung wird zentriert)
+\end{center}
+\begin{flushleft}
+Linksbündiger Text (Der gesamte Text innerhalb der Umgebung wird linksbündig)
+\end{flushleft}
+\begin{flushright}
+Rechtsbündiger Text (Der gesamte Text innerhalb der Umgebung wird rechtsbündig)
+\end{flushright}
+In einer Fußnote\footnote{können zusätzliche Ergänzungen, Präzisierungen, Textverweise usw. eingeführt werden.}
+
+\subsection{Abbildungen}
+
+In \cref{fig:fhdw} sehen Sie das Logo der FHDW.
+
+\begin{figure}[hbt]
+\centering
+\begin{minipage}[t]{.7\textwidth} % Breite, z.B. 1\textwidth		
+\caption{Das Logo der FHDW} % Überschrift
+\includegraphics[width=1\textwidth]{img/fhdw.pdf}\\ % Pfad
+\source{Eigene Darstellung} % Quelle
+\label{fig:fhdw}
+\end{minipage}
+\end{figure}
+
+\subsection{Tabellen}
+
+In \cref{tab:pin} auf Seite \pageref{tab:pin} sehen Sie die am häufigsten benutzten PINs.
+
+\begin{table}[hbt]
+\centering
+\begin{minipage}[t]{.5\textwidth} % Breite, z.B. 1\textwidth		
+\caption{Die am häufigsten verwendeten PINs} % Überschrift
+\begin{tabularx}{\columnwidth}{rXrr}
+\toprule
+Rank & PIN & Percentage & Accumulated \\
+\midrule
+1 & 1234 & 4.34\% & 4.34\%\\
+2 & 0000 & 2.57\% & 6.91\%\\
+3 & 2580 & 2.32\% & 9.23\%\\
+4 & 1111 & 1.60\% & 10.83\%\\
+5 & 5555 & 0.87\% & 11.70\%\\
+6 & 5683 & 0.70\% & 12.39\%\\
+7 & 0852 & 0.60\% & 12.99\%\\
+8 & 2222 & 0.56\% & 13.55\%\\
+9 & 1212 & 0.49\% & 14.03\%\\
+10 & 1998 & 0.43\% & 14.46\%\\
+\bottomrule
+\end{tabularx}
+\source{Eigene Darstellung} % Quelle
+\label{tab:pin}
+\end{minipage}
+\end{table}
+
+\subsection{Zitate}
+
+Ein Zitat im Fließtext ist zu sehen bei \citet{Fuller2011}.
+
+Ein vergleichendes Zitat.\footnote{\cite[vgl.][5\psqq]{Maslennikov2011}}
+
+Ein \enquote{wörtliches Zitat}\footnote{\cite[13\psq]{Meier2010}}
+
+Zitat einer Quelle mit mehreren Autoren.\footnote{\cite[vgl.][32\psqq]{Hocking2011a}}
+
+
+\subsection{Abkürzungen}
+Bei der ersten Verwendung werden Abkürzungen ausgeschrieben: \gls{AES}.
+Später wird dann automatisch nur noch die Kurzform benutzt: \gls{AES}
+
+
+\subsection{Listen}
+\label{sec:Listen}
+Eine einfache List mit Punkten:
+
+\begin{compactitem}
+	\item Punkt 1
+	\item Punkt 2
+	\item Punkt 3
+\end{compactitem}
+
+Eine einfache Liste mit Nummern:
+\begin{compactenum}
+	\item Punkt 1
+	\item Punkt 2 
+	\item Punkt 3
+\end{compactenum}
+
+Eine einfache Liste mit römischen Nummern:
+\begin{compactenum}[I.]
+	\item Punkt 1
+	\item Punkt 2
+	\item Punkt 3
+\end{compactenum}
+
+Eine einfache Liste mit Buchstaben:
+\begin{compactenum}[(a)]
+	\item Punkt 1
+	\item Punkt 2 
+	\item Punkt 3
+\end{compactenum}
+
+\subsection{Quelltext}
+
+Listing~\ref{list:android} auf Seite~\pageref{list:android} zeigt einigen Quelltext.
+
+\begin{figure}[bht]
+\begin{lstlisting}[caption=Scanning for Wi-Fi Access Points on Android, label=list:android]
+registerReceiver(new RSSIBroadcastReceiver(), 
+    new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+
+WifiManager wifi = getSystemService(Context.WIFI_SERVICE);
+wifi.startScan();
+
+/* not thread safe */
+public class RSSIBroadcastReceiver extends BroadcastReceiver {
+
+    public void onReceive(Context context, Intent intent) {
+        WifiManager wifi = getSystemService(Context.WIFI_SERVICE);
+        List<ScanResult> scanResults = wifiManager.getScanResults();
+
+        for (ScanResult scanResult : results) {
+            RSSI rssi = new RSSI();
+            rssi.bssi = scanResult.BSSID;
+            rssi.signalLevel = scanResult.level;
+        }
+    }
+}
+\end{lstlisting}
+%\footnoterule{}
+%\footnotesize{Casts have been omitted for the sake of readability}
+\end{figure}
