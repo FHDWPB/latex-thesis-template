@@ -24,15 +24,27 @@ Unter Debian/Ubuntu kann die Installation der erforderlichen Pakete mittels der 
 \texttt{sudo apt-get install biber}
 \end{quoting}
 
+\subsubsection{Mac-OS}
+Von der Tex-User-Group wird jährlich ein komplettes aktuelles Mac{\TeX}-Paket angeboten (http://www.tug.org/mactex/index.html), in dem alle relevanten Programme und Pakete enthalten sind.
+
 \subsection{PDF-Viewer}
 
 \subsubsection{Windows}
 
 Als PDF-Viewer unter Windows bietet sich der freie Sumatra PDF Viewer an: \url{http://blog.kowalczyk.info/software/sumatrapdf/download-free-pdf-viewer-de.html}
 
-\subsubsection{Linux}
+\subsubsection{Linux und Mac-OS}
 
-Die installierten Standard-PDF-Viewer unter Linux können problemlos genutzt werden.
+Die installierten Standard-PDF-Viewer unter Linux bzw. Mac-OS können problemlos genutzt werden.
+
+\subsection{Hello World}
+Nach der Installation sollte ein erster Test der Vorlage versucht werden. Dazu öffnen Sie ein Kommandozeilenfenster und wechseln in das Verzeichnis, in dem sich die {\LaTeX}-Quellen dieser Vorlage befinden. Anschließend müssen auf der Kommandozeile die Befehle 
+\begin{lstlisting}
+  biber Thesis
+  pdflatex Thesis
+\end{lstlisting}
+eingegeben werden. Nun sollte eine neue Datei {\tt Thesis.pdf} erzeugt worden sein. Falls nicht, sehen Sie bitte in den Ausgaben nach, die \LaTeX erzeugt hat. Diese sind recht umfangreich, auch wenn ein PDF-Dokument erzeugt werden konnte.
+
 
 \subsection{Literaturverwaltung}
 
