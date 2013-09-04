@@ -23,7 +23,7 @@ parskip=half*,    % Absatzformatierung s. scrguide 3.1
 headsepline,      % Trennline zum Seitenkopf  
 %footsepline,     % Trennline zum Seitenfuß
 %normalheadings,  % Überschriften etwas kleiner (smallheadings)
-listof=totoc,     % Tabellen & Abbildungsverzeichnis ins Inhaltsverzeichnis 
+listof=totoc,     % Tabellen & Abbildungsverzeichnis ins Inhaltsverzeichnis      
 %bibtotoc,        % Literaturverzeichnis im Inhalt 
 %draft            % Überlangen Zeilen in Ausgabe gekennzeichnet
 footinclude=false,% Fußzeile in die Satzspiegelberechnung einbeziehen 
@@ -32,7 +32,7 @@ final             % draft beschleunigt die Kompilierung
 ]
 {scrartcl}
 
-
+%\setuptoc{toc}{totoc} % Inhaltsverzeichnis ins Inhaltsverzeichnis
 
 % Neue Deutsche Rechtschreibung und Deutsche Standardtexte
 \usepackage[ngerman]{babel} 
@@ -118,7 +118,7 @@ final             % draft beschleunigt die Kompilierung
 \setcounter{tocdepth}{3} 
 
 % Tabellen- und Abbildungsverzeichnis mit Bezeichnung:
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \renewcommand*\cftfigpresnum{Abbildung~}
 \renewcommand*\cfttabpresnum{Tabelle~}
 \renewcommand{\cftfigaftersnum}{:}
