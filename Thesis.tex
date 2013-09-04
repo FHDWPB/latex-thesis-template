@@ -1,3 +1,5 @@
+\input{config/Config}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Parameter - Hier auf die eigene Arbeit anpassen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -6,14 +8,19 @@
 \newcommand{\abgabedatum}{\today} 
 \newcommand{\ort}{Paderborn} 
 \newcommand{\koorperationsunternehmen}{Unternehmen GmbH}
-\newcommand{\dokumententitel}{Konzeption und prototypische Realisierung einer \dokumententyp{} mit {\LaTeX}}
+\newcommand{\dokumententitel}{Konzeption und prütotypische Realisierung einer \dokumententyp{} mit {\LaTeX}}
 \newcommand{\dokumentenautor}{Max Mustermann}
 \newcommand{\dokumentenautoradress}{Musterweg 123\\33102 Paderborn}
 \newcommand{\dokumentenpruefer}{Prof. Dr. Weis-Alles\\Prof. Dr. Besser}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{config/Config}
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0},
+  pdftitle=\dokumententitel,
+  pdfauthor=\dokumentenautor
+} 
 
 \begin{document}
 
