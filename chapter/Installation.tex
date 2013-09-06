@@ -71,3 +71,15 @@ Als Texteditor für \LaTeX wird Sublime Text (\url{http://www.sublimetext.com}) 
 \source{\url{http://www.sublimetext.com/screenshots/alpha_goto_anything2_large.png}} % Quelle
 \end{minipage}
 \end{figure}
+
+\subsection{PDF-Erzeugung}
+
+Für die Erzeugung des PDF-Dokuments inklusive Referenzen, Quellenverzeichnis und Glossar sind mehrere Programmaufrufe und -durchläufe erforderlich. Der vollständige Aufruf zur PDF-Erzeugung lautet: 
+
+\begin{quoting}
+\texttt{pdflatex Thesis}\\
+\texttt{biber Thesis}\\
+\texttt{makeindex -s Thesis.ist -t Thesis.alg -o Thesis.acr Thesis.acn}\\
+\texttt{pdflatex Thesis}\\
+\texttt{pdflatex Thesis}\\
+\end{quoting}
