@@ -100,6 +100,7 @@ final             % draft beschleunigt die Kompilierung
     maxcitenames=3,           % max. Anzahl Autorennamen in Zitaten
     maxbibnames=99,           % max. Anzahl Autorennamen im Quellenverzeichnis
     %backend=bibtex           % Ggf. für ältere Distributionen bibtex verwenden
+    backend=biber
 ]{biblatex}
 
 % Bibliograpthy
@@ -183,7 +184,7 @@ final             % draft beschleunigt die Kompilierung
 \newcounter{fktnr}\setcounter{fktnr}{0}
 \newcounter{subfktnr}[fktnr]\setcounter{subfktnr}{0}
 
-\renewcommand\thesubfktnr{\arabic{fktnr}.\thefktnr}
+\renewcommand\thesubfktnr{\arabic{fktnr}.\arabic{subfktnr}}
 \newcounter{anhangcounter}
 \newcommand{\blatt}{\stepcounter{anhangcounter}}
 
