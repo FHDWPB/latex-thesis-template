@@ -4,7 +4,7 @@
 
 \subsection{TeX-Distribution}
 
-F체r die Arbeit mit \LaTeX ist eine TeX-Distribution erforderlich. 
+F체r die Arbeit mit \LaTeX ist eine aktuelle TeX-Distribution erforderlich. 
 
 \subsubsection{Windows}
 
@@ -16,13 +16,11 @@ Die Standard-{\LaTeX}-Distribution unter Linux ist Tex Live, welche 체ber die g�
 
 Unter Debian/Ubuntu kann die Installation der erforderlichen Pakete mittels der folgenden Befehlen durchgef체hrt werden:
 
-\begin{quoting}
 \texttt{sudo apt-get install texlive-latex-base}\\
 \texttt{sudo apt-get install texlive-latex-recommended}\\
 \texttt{sudo apt-get install texlive-fonts-recommended}\\
 \texttt{sudo apt-get install biblatex}\\
 \texttt{sudo apt-get install biber}
-\end{quoting}
 
 \subsubsection{Mac-OS}
 Von der Tex-User-Group wird j채hrlich ein komplettes aktuelles Mac{\TeX}-Paket angeboten (http://www.tug.org/mactex/index.html), in dem alle relevanten Programme und Pakete enthalten sind.
@@ -76,10 +74,8 @@ Als Texteditor f체r \LaTeX wird Sublime Text (\url{http://www.sublimetext.com}) 
 
 F체r die Erzeugung des PDF-Dokuments inklusive Referenzen, Quellenverzeichnis und Glossar sind mehrere Programmaufrufe und -durchl채ufe erforderlich. Der vollst채ndige Aufruf zur PDF-Erzeugung lautet: 
 
-\begin{quoting}
 \texttt{pdflatex Thesis}\\
 \texttt{biber Thesis}\\
 \texttt{makeindex -s Thesis.ist -t Thesis.alg -o Thesis.acr Thesis.acn}\\
 \texttt{pdflatex Thesis}\\
 \texttt{pdflatex Thesis}\\
-\end{quoting}

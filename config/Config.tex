@@ -79,11 +79,8 @@ final             % draft beschleunigt die Kompilierung
 % Deutsche Anführungszeichen
 \usepackage[babel,german=quotes]{csquotes}
 
-% Quote-Umgebung für längere Zitate
-\usepackage[vskip=.3pt]{quoting}
-
 % Verbessert das Referenzieren von Kapiteln, Abbildungen etc.
-\usepackage[german,noabbrev,capitalise]{cleveref}
+\usepackage[german,capitalise]{cleveref}
 
 % Konfiguration der Abbildungs- und Tabellenbezeichnungen
 \usepackage[format=hang, font={footnotesize, sf}, labelfont=bf, justification=raggedright,singlelinecheck=false]{caption}
@@ -102,7 +99,7 @@ final             % draft beschleunigt die Kompilierung
     dashed=false, 
     maxcitenames=3,           % max. Anzahl Autorennamen in Zitaten
     maxbibnames=99,           % max. Anzahl Autorennamen im Quellenverzeichnis
-    backend=biber
+    %backend=bibtex           % Ggf. für ältere Distributionen bibtex verwenden
 ]{biblatex}
 
 % Bibliograpthy
