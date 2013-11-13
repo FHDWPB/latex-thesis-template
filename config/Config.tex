@@ -117,13 +117,38 @@ final             % draft beschleunigt die Kompilierung
 
 % Tabellen- und Abbildungsverzeichnis mit Bezeichnung:
 \usepackage[titles]{tocloft}
+
+% Sourcecode-Listings
+\usepackage{listings}
+
+% Bestimmte Warnungen unterdrücken
+% siehe http://tex.stackexchange.com/questions/51867/koma-warning-about-toc
+\usepackage{scrhack} 
+
+%% http://tex.stackexchange.com/questions/126839/how-to-add-a-colon-after-listing-label
+\makeatletter
+\begingroup\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\makeatother
+
 \renewcommand*\cftfigpresnum{Abbildung~}
 \renewcommand*\cfttabpresnum{Tabelle~}
+\renewcommand*\cftlistingspresnum{Listing~}
 \renewcommand{\cftfigaftersnum}{:}
 \renewcommand{\cfttabaftersnum}{:}
+\renewcommand{\cftlistingsaftersnum}{:}
 \settowidth{\cftfignumwidth}{\cftfigpresnum 99~\cftfigaftersnum}
 \settowidth{\cfttabnumwidth}{\cfttabpresnum 99~\cftfigaftersnum}
+\settowidth{\cftlistingsnumwidth}{\cftlistingspresnum 99~\cftfigaftersnum}
+\setlength{\cfttabindent}{1.5em}
+\setlength{\cftfigindent}{1.5em}
+\setlength{\cftlistingsindent}{1.5em}
 
+\renewcommand\lstlistlistingname{Listingverzeichnis}
+ 
 % Style für Kopf- und Fußzeilenfelder
 \pagestyle{fancy}
 \fancyhf{}
@@ -134,13 +159,6 @@ final             % draft beschleunigt die Kompilierung
 
 % Macro für Quellenangaben unter Abbildungen und Tabellen
 \newcommand{\source}[1]{{\vspace{-1mm}\\\footnotesize\textsf{\textbf{Quelle:}} \textsf{#1}\par}}
-
-% Sourcecode-Listings
-\usepackage{listings}
-
-% Bestimmte Warnungen unterdrücken
-% siehe http://tex.stackexchange.com/questions/51867/koma-warning-about-toc
-\usepackage{scrhack} 
 
 % Anpassungen der Formatierung an Eclipse-Aussehen 
 % http://jevopi.blogspot.de/2010/03/nicely-formatted-listings-in-latex-with.html
@@ -170,12 +188,9 @@ final             % draft beschleunigt die Kompilierung
   lineskip=-0.3em
 }
 
-\renewcommand{\lstlistingname}{Listing}
-\renewcommand\lstlistlistingname{Listingverzeichnis}
-
-\makeatletter
-\def\l@lstlisting#1#2{\@dottedtocline{1}{0em}{1em}{\lstlistingname\space{#1}}{#2}}
-\makeatother
+%\makeatletter
+%\def\l@lstlisting#1#2{\@dottedtocline{1}{0em}{1.5em}{\lstlistingname\space{#1}}{#2}}
+%\makeatother
 
 % Anhangsverzeichnis
 \usepackage[nohints]{minitoc} %Anhangsverzeichnis
