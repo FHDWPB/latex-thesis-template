@@ -22,7 +22,6 @@
 *.out
 *.bfc
 *.bcf
-*.pdf
 *.lop
 *.fk
 *.lem
