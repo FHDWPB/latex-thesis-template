@@ -64,9 +64,6 @@ final             % draft beschleunigt die Kompilierung
 % Erlaubt die Benutzung von Farben
 \usepackage{color}
 
-% Links im PDF
-\usepackage{hyperref}
-
 % Verbessertes URL-Handling mit \url{http://...}
 \usepackage{url}
 
@@ -90,7 +87,8 @@ final             % draft beschleunigt die Kompilierung
 
 % Zitate und Quellenverzeichnis
 \usepackage[
-    style=authoryear,         % Zitierstil
+    bibstyle=authoryear,
+    citestyle=authoryear-fhdw,  
     firstinits=false,         % false = Vornamen werden ausgeschrieben
     natbib=true,
     urldate=long,             % "besucht am" - Datum
@@ -99,8 +97,8 @@ final             % draft beschleunigt die Kompilierung
     dashed=false, 
     maxcitenames=3,           % max. Anzahl Autorennamen in Zitaten
     maxbibnames=99,           % max. Anzahl Autorennamen im Quellenverzeichnis
-    %backend=bibtex           % Ggf. für ältere Distributionen bibtex verwenden
-    backend=biber
+    backend=bibtex           % Ggf. für ältere Distributionen bibtex verwenden
+    %backend=biber
 ]{biblatex}
   
 % Bibliograpthy
@@ -215,7 +213,10 @@ final             % draft beschleunigt die Kompilierung
 
 \newcommand{\anhangsverzeichnis}{\mtcaddsection{\subsection*{Anhangsverzeichnis \@mkboth{FKT}{FKT}}}\@starttoc{fk}\newpage}
 
-% Abkürzungsverzeichnis
+% Links im PDF
+\usepackage[pdfpagemode={UseOutlines}, plainpages=false,breaklinks=true,pdfpagelabels]{hyperref}
+
+ % Abkürzungsverzeichnis
 \usepackage[acronym,         % create list of acronyms
             nonumberlist,
             toc, 
@@ -231,4 +232,4 @@ final             % draft beschleunigt die Kompilierung
 }
 
 \input{config/Abkuerzungen}
-\makeglossaries\makeglossaries
+\makeglossaries\makeglossaries 
