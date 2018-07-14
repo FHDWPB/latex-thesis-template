@@ -1,7 +1,9 @@
 \ProvidesFile{authoryear-fhdw.cbx}
 [\abx@cbxid]
 
-\ExecuteBibliographyOptions{labeldate,uniquename,uniquelist,autocite=inline}
+% Change labeldate to labeldateparts in order to be able to compile against the latest TeXLive versions
+% See https://tex.stackexchange.com/a/330515 for details
+\ExecuteBibliographyOptions{labeldateparts,uniquename,uniquelist,autocite=inline}
 
 \renewcommand*{\iffinalcitedelim}{\iflastcitekey}
 
