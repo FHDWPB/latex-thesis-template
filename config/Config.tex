@@ -76,9 +76,6 @@ final             % draft beschleunigt die Kompilierung
 % Deutsche Anführungszeichen
 \usepackage[babel,german=quotes]{csquotes}
 
-% Verbessert das Referenzieren von Kapiteln, Abbildungen etc.
-\usepackage[german,capitalise]{cleveref}
-
 % Konfiguration der Abbildungs- und Tabellenbezeichnungen
 \usepackage[format=hang, font={footnotesize, sf}, labelfont=bf, justification=raggedright,singlelinecheck=false]{caption}
 
@@ -230,6 +227,9 @@ final             % draft beschleunigt die Kompilierung
 \renewcommand*{\glossaryentryfield}[5]{%
     \glsentryitem{##1}\textbf{##2} & ##3 \\}%
 }
+
+% Verbessert das Referenzieren von Kapiteln, Abbildungen etc.
+\usepackage[german,capitalise]{cleveref}
 
 \input{config/Abkuerzungen}
 \makeglossaries\makeglossaries 
