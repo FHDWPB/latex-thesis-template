@@ -222,11 +222,9 @@ final             % draft beschleunigt die Kompilierung
             hyperfirst=false,% don't hyperlink first use
             sanitize=none    % switch off sanitization as description
             ]{glossaries}
-            \newglossarystyle{mylist}{%
-\glossarystyle{long}% base this style on the list style
-\renewcommand*{\glossaryentryfield}[5]{%
-    \glsentryitem{##1}\textbf{##2} & ##3 \\}%
-}
+
+% Abkürzung im Verzeichnis in fettgedruckter Schrift
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
 
 % Verbessert das Referenzieren von Kapiteln, Abbildungen etc.
 \usepackage[german,capitalise]{cleveref}
