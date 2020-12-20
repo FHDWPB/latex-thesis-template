@@ -1,0 +1,23 @@
+name: Latex CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_latex:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: Thesis.tex
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Thesis.pdf
+        path: Thesis.pdf
