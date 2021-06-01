@@ -35,3 +35,9 @@
 *.synctex.gz
 *.toc
 *.toc1
+
+# Intelij Config
+
+.idea/
+*.iml
+out/
