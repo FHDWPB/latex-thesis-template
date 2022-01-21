@@ -214,7 +214,8 @@ final             % draft beschleunigt die Kompilierung
 \usepackage[pdfpagemode={UseOutlines}, plainpages=false,breaklinks=true,pdfpagelabels]{hyperref}
 
  % Abkürzungsverzeichnis
-\usepackage[acronym,         % create list of acronyms
+\usepackage[automake,
+			acronym,         % create list of acronyms
             nonumberlist,
             toc, 
             section,
@@ -231,5 +232,5 @@ final             % draft beschleunigt die Kompilierung
 % Verbessert das Referenzieren von Kapiteln, Abbildungen etc.
 \usepackage[german,capitalise]{cleveref}
 
-\input{config/Abkuerzungen}
 \makeglossaries\makeglossaries 
+\input{config/Abkuerzungen}
