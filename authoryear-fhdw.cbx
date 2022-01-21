@@ -17,11 +17,11 @@
        {\printnames{labelname}%
         \setunit{\nameyeardelim}}%
      \usebibmacro{cite:labelyear+extrayear}}
-    {\usebibmacro{cite:shorthand}}}
-
+   {\usebibmacro{cite:shorthand}}}
+   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareNameAlias{author}{sortname}
+\DeclareNameAlias{author}{last-first}
 
 \renewbibmacro*{author}{%
   \ifboolexpr{
@@ -151,7 +151,8 @@
 \DeclareCiteCommand{\footcite}[\mkbibfootnote]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
-   \usebibmacro{cite}}
+   \usebibmacro{cite2}
+   }
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
