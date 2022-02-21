@@ -51,9 +51,15 @@
 % Inhaltsverzeichnis
 \tableofcontents\newpage
 
+% Glossar
+\renewcommand{\glossarypreamble}{\label{glossary}}
+\printglossary[style=mylist, title=Glossar, toctitle=Glossar] \newpage
+
 % Abkürzungsverzeichnis
-\printglossary[type=\acronymtype, style=mylist, title=Abkürzungsverzeichnis, toctitle=Abkürzungsverzeichnis]\newpage
-\setcounter{table}{0} % printglossary erzeugt eine Tabelle, die die Nummerierung der "echten" Tabellen durcheinander bringt. 
+\renewcommand{\glossarypreamble}{\label{acronyms}}
+\printglossary[type=acronym, style=mylist, title=Abkürzungsverzeichnis, toctitle=Abkürzungsverzeichnis] \newpage
+
+\setcounter{table}{0} % printglossary erzeugt eine Tabelle, die die Nummerierung der "echten" Tabellen durcheinander bringt.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Verzeichnisse
