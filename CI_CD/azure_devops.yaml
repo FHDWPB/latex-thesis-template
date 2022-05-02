@@ -1,0 +1,21 @@
+trigger:
+  branches:
+    include:
+    - refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - checkout: self
+  - task: CmdLine@2
+    displayName: Build document
+    inputs:
+      script: "sudo apt-get update\nsudo apt-get install -y texlive-full\n\nlatexmk -pdf Thesis.tex"
+  - task: PublishPipelineArtifact@1
+    displayName: Publish document
+    inputs:
+      path: Thesis.pdf
+      artifactName: Document output
+...
