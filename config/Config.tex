@@ -17,8 +17,8 @@
 \documentclass[%
 paper=A4,         % alle weiteren Papierformat einstellbar
 fontsize=12pt,    % Schriftgröße (12pt, 11pt (Standard))
-BCOR12mm,         % Bindekorrektur, bspw. 1 cm
-DIV14,            % breiter Satzspiegel
+BCOR=12mm,         % Bindekorrektur, bspw. 1 cm
+DIV=14,            % breiter Satzspiegel
 parskip=half*,    % Absatzformatierung s. scrguide 3.1
 headsepline,      % Trennline zum Seitenkopf  
 %footsepline,     % Trennline zum Seitenfuß
@@ -86,7 +86,7 @@ final             % draft beschleunigt die Kompilierung
 \usepackage[
     bibstyle=authoryear,
     citestyle=authoryear-fhdw,  
-    firstinits=false,         % false = Vornamen werden ausgeschrieben
+    giveninits=false,         % false = Vornamen werden ausgeschrieben
     natbib=true,
     urldate=long,             % "besucht am" - Datum
     %url=false,
@@ -218,11 +218,13 @@ final             % draft beschleunigt die Kompilierung
             nonumberlist,
             toc, 
             section,
-            sanitize=none,    % switch off sanitization as description
             nopostdot  % avoid dot after acronym
+            nomain,          % don't need main glossary for this example
+            hyperfirst=false,% don't hyperlink first use
+            %sanitize=none    % switch off sanitization as description % Deprecated
             ]{glossaries}
             \newglossarystyle{mylist}{%
-\glossarystyle{long}% base this style on the list style
+\setglossarystyle{long}% base this style on the list style
 \renewcommand*{\glossaryentryfield}[5]{%
     \glsentryitem{##1}\textbf{##2} & ##3 \\}%
 }
