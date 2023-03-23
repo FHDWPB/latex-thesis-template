@@ -25,7 +25,7 @@
             "name": "makeglossaries",
             "command": "makeglossaries",
             "args": [
-                "%DOC%"
+                "%DOCFILE%"
             ],
             "env": {}
         },
