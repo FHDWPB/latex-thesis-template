@@ -8,7 +8,7 @@ Für die Arbeit mit \LaTeX ist eine aktuelle TeX-Distribution erforderlich.
 
 \subsubsection{Windows}
 
-Unter Windows ist MiKTeX die Standard-{\LaTeX}-Distribution. Der MikTex-Installer kann unter \url{http://miktex.org/download} heruntergeladen werden.
+Unter Windows ist MiKTeX die Standard-{\LaTeX}-Distribution. Der MikTex-Installer kann unter \url{http://miktex.org/download} heruntergeladen werden. Zusätzlich ist eine Perl-Installation erforderlich, wenn das Glossar wie in der Vorlage enthalten über \texttt{makeglossaries} erzeugt werden soll. Hierzu kann z.B. Strawberry Perl von \url{https://strawberryperl.com/} installiert werden.
 
 \subsubsection{Linux}
 
@@ -38,10 +38,10 @@ Die installierten Standard-PDF-Viewer unter Linux bzw. Mac-OS können problemlos
 \subsection{Hello World}
 Nach der Installation sollte ein erster Test der Vorlage versucht werden. Dazu öffnen Sie ein Kommandozeilenfenster und wechseln in das Verzeichnis, in dem sich die {\LaTeX}-Quellen dieser Vorlage befinden. Anschließend müssen auf der Kommandozeile die Befehle 
 \begin{lstlisting}
-  biber Thesis
   pdflatex Thesis
+  biber Thesis
 \end{lstlisting}
-eingegeben werden. Nun sollte eine neue Datei \texttt{Thesis.pdf} erzeugt worden sein. Falls nicht, sehen Sie bitte in den Ausgaben nach, die \LaTeX erzeugt hat. Diese sind recht umfangreich, auch wenn ein PDF-Dokument erzeugt werden konnte.
+eingegeben werden. Nun sollte eine neue Datei \texttt{Thesis.pdf} erzeugt worden sein. Falls nicht, sehen Sie bitte in den Ausgaben nach, die \LaTeX erzeugt hat. Diese sind recht umfangreich, auch wenn ein PDF-Dokument erzeugt werden konnte. Für die Erzeugung des vollständigen Dokumentes sei auf Abschnitt \ref{subsec:pdfErzeugung} verwiesen.
 
 
 \subsection{Literaturverwaltung}
@@ -71,7 +71,7 @@ Als Texteditor für \LaTeX wird Sublime Text (\url{http://www.sublimetext.com}) 
 \end{figure}
 
 \subsection{PDF-Erzeugung}
-
+\label{subsec:pdfErzeugung}
 Für die Erzeugung des PDF-Dokuments inklusive Referenzen, Quellenverzeichnis und Glossar sind mehrere Programmaufrufe und -durchläufe erforderlich. Der vollständige Aufruf zur PDF-Erzeugung lautet: 
 
 \texttt{pdflatex Thesis}\\
